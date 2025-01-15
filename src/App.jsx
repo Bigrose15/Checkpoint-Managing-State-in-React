@@ -3,7 +3,6 @@ import TaskForm from "./Components/TaskForm";
 import TaskList from "./Components/TaskList";
 import FilterTask from "./Components/FilterTask";
 import TaskSort from "./Components/TaskSort";
-import "./App.css";
 
 function App() {
   const [tasks, setTasks] = useState([]);
@@ -47,7 +46,7 @@ function App() {
 
   return (
     <div className="App">
-      <h1>To-Do List</h1>
+      <h1>To Do App _ by Lawrence</h1>
       <TaskForm addTask={addTask} />
       <FilterTask setFilter={setFilter} />
       <TaskSort setSort={setSort} />

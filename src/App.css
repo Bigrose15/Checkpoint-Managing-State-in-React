@@ -1,0 +1,156 @@
+/* General Setting */
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+}
+
+/* Body Styling */
+body {
+  font-family: "Arial", sans-serif;
+  background-color: #f0f3ed;
+  color: #333;
+  padding: 20px;
+}
+
+h1 {
+  text-align: center;
+  color: #0e7209;
+  margin-bottom: 20px;
+  font-size: 1.5rem;
+}
+
+/* Task Form Styling */
+form {
+  display: flex;
+  flex-direction: column;
+  gap: 15px;
+  max-width: 500px;
+  margin: 0 auto;
+  background-color: #fff;
+  padding: 20px;
+  border-radius: 8px;
+  box-shadow: 0 2px 5px rgba(0, 0, 0, 0.1);
+}
+
+input,
+select,
+button {
+  padding: 10px;
+  font-size: 1rem;
+  border: 1px solid #ddd;
+  border-radius: 4px;
+}
+
+button {
+  background-color: #4caf50;
+  color: white;
+  cursor: pointer;
+  transition: background-color 0.3s ease;
+  border: none;
+}
+
+button:hover {
+  background-color: #45a049;
+}
+
+button:active {
+  background-color: #387a3d;
+}
+
+select {
+  background-color: #fff;
+}
+
+input[type="date"] {
+  background-color: #fff;
+}
+
+/* Buttons inside form are spaced apart */
+form button {
+  margin-top: 10px;
+}
+
+/* Task List Styling */
+.task-list {
+  display: flex;
+  flex-direction: column;
+  gap: 20px;
+  max-width: 500px;
+  margin: 30px auto;
+}
+
+.task-item {
+  background-color: #fff;
+  padding: 20px;
+  border-radius: 8px;
+  box-shadow: 0 2px 5px rgba(0, 0, 0, 0.1);
+  display: flex;
+  flex-direction: column;
+  gap: 10px;
+}
+
+.task-item.completed {
+  background-color: #95ad93;
+}
+
+.task-item h3 {
+  margin-bottom: 10px;
+}
+
+.task-item button {
+  width: 100%;
+  margin: 5px 0;
+}
+
+/* Filters and Sorting Buttons */
+.filter-task,
+.task-sort {
+  display: flex;
+  justify-content: center;
+  gap: 15px;
+  margin-bottom: 20px;
+}
+
+.filter-task button,
+.task-sort button {
+  padding: 10px 20px;
+  background-color: green;
+  color: white;
+  border-radius: 8px;
+  border-color: none;
+  cursor: pointer;
+  transition: background-color 0.3s ease;
+  margin-top: 10px;
+}
+
+.filter-task button:hover,
+.task-sort button:hover {
+  background-color: rgb(67, 102, 71);
+}
+
+.filter-task button:active,
+.task-sort button:active {
+  background-color: #0a7945;
+}
+
+/* Responsive Styling */
+@media (max-width: 768px) {
+  .task-list {
+    padding: 0 20px;
+  }
+
+  form {
+    width: 100%;
+    padding: 15px;
+  }
+
+  .task-item {
+    padding: 15px;
+  }
+
+  .filter-task button,
+  .task-sort button {
+    font-size: 0.9rem;
+  }
+}
