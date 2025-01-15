@@ -1,9 +1,14 @@
 import React, { useState, useEffect } from "react";
 import TaskForm from "./Components/TaskForm";
 import TaskList from "./Components/TaskList";
+import FilterTask from "./Components/FilterTask";
+import TaskSort from "./Components/TaskSort";
+import "./App.css";
 
 function App() {
   const [tasks, setTasks] = useState([]);
+  const [filter, setFilter] = useState("all");
+  const [sort, setSort] = useState("default");
 
   useEffect(() => {
     const savedTasks = JSON.parse(localStorage.getItem("tasks"));
@@ -28,13 +33,26 @@ function App() {
     );
   };
 
+  const filteredTasks = tasks.filter((task) => {
+    if (filter === "completed") return task.completed;
+    if (filter === "active") return !task.completed;
+    return true;
+  });
+
+  const sortedTasks = [...filteredTasks].sort((a, b) => {
+    if (sort === "priority") return a.priority - b.priority;
+    if (sort === "dueDate") return new Date(a.dueDate) - new Date(b.dueDate);
+    return 0; // default sorting
+  });
+
   return (
     <div className="App">
-      <h1>To Do App _by Lawrence_Ugo</h1>
+      <h1>To-Do List</h1>
       <TaskForm addTask={addTask} />
-
+      <FilterTask setFilter={setFilter} />
+      <TaskSort setSort={setSort} />
       <TaskList
-        tasks={tasks}
+        tasks={sortedTasks}
         deleteTask={deleteTask}
         toggleComplete={toggleComplete}
       />
